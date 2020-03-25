@@ -1,11 +1,17 @@
 [submodule "dina-ui"]
 path = repos/dina-ui
 url = https://github.com/AAFC-BICoE/dina-ui.git
+branch = dev
+ignore = dirty
 
 [submodule "objectstore-api"]
 path = repos/objectstore-api
 url = https://github.com/AAFC-BICoE/object-store-api.git
+branch = dev
+ignore = dirty
 
 [submodule "seqdb-api"]
 path = repos/seqdb-api
 url = https://github.com/AAFC-BICoE/seqdb-api.git
+branch = dev
+ignore = dirty
