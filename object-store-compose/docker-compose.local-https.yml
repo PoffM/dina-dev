@@ -1,0 +1,20 @@
+# Additional config for accessing the services with https locally:
+version: "3.7"
+services:
+  traefik:
+    ports:
+      - "443:443" # Traefik-connected services
+    volumes:
+      - "./traefik.yml:/etc/traefik/traefik.yml"
+      - "./tls.yml:/etc/traefik/tls.yml"
+      - "certs:/etc/ssl/traefik"
+  # Fetches the certs from traefik.me:
+  reverse-proxy-https-helper:
+    image: alpine
+    command: sh -c "cd /etc/ssl/traefik
+      && wget traefik.me/cert.pem -O cert.pem
+      && wget traefik.me/privkey.pem -O privkey.pem"
+    volumes:
+      - certs:/etc/ssl/traefik
+volumes:
+  certs:

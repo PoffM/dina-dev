@@ -37,7 +37,7 @@ services:
         -Dminio.accessKey=minio
         -Dminio.secretKey=minio123
         -Dkeycloak.enabled=true
-        -Dkeycloak.auth-server-url=http://${KEYCLOAK_DOMAIN}/auth
+        -Dkeycloak.auth-server-url=${KEYCLOAK_DOMAIN}/auth
       \"
       spring-boot:run
       "
@@ -72,7 +72,7 @@ services:
         -Dspring.liquibase.password=p
         -Dkeycloak.enabled=true
         -Dkeycloak.resource=objectstore
-        -Dkeycloak.auth-server-url=http://${KEYCLOAK_DOMAIN}/auth
+        -Dkeycloak.auth-server-url=${KEYCLOAK_DOMAIN}/auth
       \"
       spring-boot:run
       "
